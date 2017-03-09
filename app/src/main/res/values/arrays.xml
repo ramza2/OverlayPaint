@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="pen_sizes">
+        <item >3px</item>
+        <item >5px</item>
+        <item >10px</item>
+        <item >15px</item>
+        <item >20px</item>
+        <item >25px</item>
+        <item >30px</item>
+        <item >50px</item>
+    </string-array>
+    
+</resources>

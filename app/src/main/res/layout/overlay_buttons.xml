@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:gravity="center_vertical">
+    <ImageView 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/drag"/>
+    <LinearLayout
+        android:id="@+id/viewTypeLayout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+        <ImageButton
+	        android:id="@+id/editBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@android:drawable/ic_menu_edit"
+	        android:contentDescription="@string/edit"/>
+	
+	    <ImageButton
+	        android:id="@+id/hideBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@drawable/hide"
+	        android:contentDescription="@string/hide"/>
+	    
+	    <ImageButton
+	        android:id="@+id/exitBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@android:drawable/ic_lock_power_off"
+	        android:contentDescription="@string/exit"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/editTypeLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:orientation="horizontal" >
+	    <com.ramza.overlaypaint.views.ColorPickButton 
+	        android:id="@+id/colorPickButton"
+	        android:layout_width="24dp"
+	        android:layout_height="24dp"/>
+	    <Spinner 
+	        android:id="@+id/penWidthSpinner"
+	        android:layout_width="@dimen/spinner_width"
+	        android:layout_height="24dp"
+	        android:popupBackground="#44ffffff"/>
+	    <ImageButton
+	        android:id="@+id/eraseBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@drawable/erase_selector"
+	        android:contentDescription="@string/erase" />
+        <ImageButton
+	        android:id="@+id/saveBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@android:drawable/ic_menu_save"
+	        android:contentDescription="@string/save" />
+        <ImageButton
+	        android:id="@+id/clearBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@drawable/clear" 
+	        android:contentDescription="@string/clear"/>
+	    <ImageButton
+	        android:id="@+id/cancelBtn"
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:background="@android:color/transparent"
+	        android:src="@android:drawable/ic_menu_revert"
+	        android:contentDescription="@string/cancel" />
+    </LinearLayout>
+</LinearLayout>
