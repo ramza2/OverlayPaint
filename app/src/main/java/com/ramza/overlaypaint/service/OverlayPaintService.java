@@ -1,18 +1,5 @@
 package com.ramza.overlaypaint.service;
 
-import org.json.JSONException;
-
-import com.ramza.overlaypaint.R;
-import com.ramza.overlaypaint.consts.OverlayPaintDatas;
-import com.ramza.overlaypaint.datas.IDataManager;
-import com.ramza.overlaypaint.datas.PaintData;
-import com.ramza.overlaypaint.datas.PaintPathData;
-import com.ramza.overlaypaint.datas.file.PaintFileDataManager;
-import com.ramza.overlaypaint.views.ColorPicker;
-import com.ramza.overlaypaint.views.OverlayButtonLayout;
-import com.ramza.overlaypaint.views.OverlayPaintLayout;
-import com.ramza.overlaypaint.views.ColorPicker.OnColorChangedListener;
-
 import android.app.Notification;
 import android.app.NotificationManager;
 import android.app.PendingIntent;
@@ -23,13 +10,25 @@ import android.content.res.Configuration;
 import android.graphics.Color;
 import android.graphics.PixelFormat;
 import android.os.IBinder;
-import android.support.v4.app.NotificationCompat;
 import android.view.Gravity;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.AdapterView;
 import android.widget.AdapterView.OnItemSelectedListener;
 import android.widget.TextView;
+
+import com.ramza.overlaypaint.R;
+import com.ramza.overlaypaint.consts.OverlayPaintDatas;
+import com.ramza.overlaypaint.datas.IDataManager;
+import com.ramza.overlaypaint.datas.PaintData;
+import com.ramza.overlaypaint.datas.PaintPathData;
+import com.ramza.overlaypaint.datas.file.PaintFileDataManager;
+import com.ramza.overlaypaint.views.ColorPicker;
+import com.ramza.overlaypaint.views.ColorPicker.OnColorChangedListener;
+import com.ramza.overlaypaint.views.OverlayButtonLayout;
+import com.ramza.overlaypaint.views.OverlayPaintLayout;
+
+import org.json.JSONException;
 
 public class OverlayPaintService extends Service implements OnColorChangedListener, OnItemSelectedListener{
 	private OverlayPaintLayout overlayPaintLayout;
@@ -237,7 +236,7 @@ public class OverlayPaintService extends Service implements OnColorChangedListen
 		PendingIntent pendingIntent = PendingIntent.getService(getApplicationContext(), 0, intent,
 				PendingIntent.FLAG_UPDATE_CURRENT);
 
-		Notification notification = new NotificationCompat.Builder(getApplicationContext())
+		Notification notification = new Notification.Builder(getApplicationContext())
 				.setSmallIcon(R.drawable.icon).setContentTitle(getString(R.string.app_name))
 				.setContentText(getString(R.string.show_overlay_paint_menu)).setAutoCancel(true).setOngoing(true)
 				.setContentIntent(pendingIntent).build();
